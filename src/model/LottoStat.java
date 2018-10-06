@@ -14,41 +14,36 @@ public class LottoStat {
 	
 	private void test()
 	{
-		ArrayList<ArrayList<Integer>> possibles = new ArrayList<ArrayList<Integer>>();
-		
-		
-		for(int i = 1; i <= 15; i++)
+		for(int i = 1; i <= 42; i++)
 		{
 			ArrayList<Integer> temp = new ArrayList<Integer>();
 			temp.add(i);
 			
-			for(int j = 1; j <= 15; j++)
+			for(int j = 1; j <= 42; j++)
 			{
 				if(!temp.contains(j))
 				{
 					temp.add(j);
-					for(int k = 1; k <= 15; k++)
+					for(int k = 1; k <= 42; k++)
 						if(!temp.contains(k))
 						{
 							temp.add(k);
-							for(int l = 1; l <= 15; l++)
+							for(int l = 1; l <= 42; l++)
 								if(!temp.contains(l))
 								{
 									temp.add(l);
-									for(int m = 1; m <= 15; m++)
+									for(int m = 1; m <= 42; m++)
 										if(!temp.contains(m))
 										{
 											temp.add(m);
-											for(int n = 1; n <= 15; n++)
+											for(int n = 1; n <= 42; n++)
 												if(!temp.contains(n))
 												{
 													temp.add(n);
 													ArrayList<Integer> newTemp = sort((ArrayList<Integer>)temp.clone());
+													System.out.println("Combination Count: " + sixfiveeightControl.getCombinationCount());
 													if(!sixfiveeightControl.combinationExist(newTemp))
-													{
 														sixfiveeightControl.addCombination(newTemp);
-														System.out.println(sixfiveeightControl.getCombinationCount());
-													}
 														
 													temp.remove(5);
 												}

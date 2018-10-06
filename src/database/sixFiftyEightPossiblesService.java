@@ -12,7 +12,7 @@ public class sixFiftyEightPossiblesService {
 
 	public void addCombination(ArrayList<Integer> list)
 	{
-		String query = "INSERT INTO test" + " VALUES(?,?,?,?,?,?,?)";
+		String query = "INSERT INTO sixfourtytwoPossibles" + " VALUES(?,?,?,?,?,?,?)";
 		
 		try {
 			PreparedStatement ps = LottoDB.getConnection().prepareStatement(query);
@@ -26,16 +26,16 @@ public class sixFiftyEightPossiblesService {
 			ps.setInt(7, list.get(5));
 			ps.executeUpdate();
 			ps.close();
-			System.out.println("[6/58] COMBO ADDITION SUCCESS");
+			System.out.println("[6/42] COMBO ADDITION SUCCESS");
 		}catch (SQLException e) {
-			System.out.println("[6/58] COMBO ADDITION FAILED");
+			System.out.println("[6/42] COMBO ADDITION FAILED");
 			e.printStackTrace();
 		}
 	}
 	
 	public int getCombinationCount()
 	{
-		String query = "SELECT COUNT(*) AS TOTAL FROM test";
+		String query = "SELECT COUNT(*) AS TOTAL FROM sixfourtytwoPossibles";
 		int count = 0;
 		try {
 			PreparedStatement ps = LottoDB.getConnection().prepareStatement(query);
@@ -46,9 +46,9 @@ public class sixFiftyEightPossiblesService {
 			
 			ps.close();
 			rs.close();
-			System.out.println("[6/58] COMBO COUNT GET SUCCESS");
+			System.out.println("[6/42] COMBO COUNT GET SUCCESS");
 		}catch (SQLException e) {
-			System.out.println("[6/58] COMBO COUNT GET FAILED");
+			System.out.println("[6/42] COMBO COUNT GET FAILED");
 			e.printStackTrace();
 		}
 		return count;
@@ -56,7 +56,7 @@ public class sixFiftyEightPossiblesService {
 	
 	public boolean combinationExist(ArrayList<Integer> list)
 	{
-		String query = "SELECT * FROM test" + " WHERE "
+		String query = "SELECT * FROM sixfourtytwoPossibles" + " WHERE "
 				+ sixFiftyEightPossibles.COL_NUMBER1 + " = ? AND "
 				+ sixFiftyEightPossibles.COL_NUMBER2 + " = ? AND "
 				+ sixFiftyEightPossibles.COL_NUMBER3 + " = ? AND "
@@ -83,9 +83,9 @@ public class sixFiftyEightPossiblesService {
 
 			ps.close();
 			rs.close();
-			System.out.println("[6/58] COMBO CHECK SUCCESS");
+			System.out.println("[6/42] COMBO CHECK SUCCESS");
 		}catch (SQLException e) {
-			System.out.println("[6/58] COMBO CHECK FAILED");
+			System.out.println("[6/42] COMBO CHECK FAILED");
 			e.printStackTrace();
 		}
 		
